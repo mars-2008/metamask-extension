@@ -25,6 +25,7 @@ import {
 import { getAveragePriceEstimateInHexWEI } from './custom-gas';
 import { getCurrentChainId, deprecatedGetCurrentNetworkId } from './selectors';
 import { checkNetworkAndAccountSupports1559 } from '.';
+import { isEqualCaseInsensitive } from '../helpers/utils/util';
 
 const unapprovedTxsSelector = (state) => state.metamask.unapprovedTxs;
 const unapprovedMsgsSelector = (state) => state.metamask.unapprovedMsgs;
@@ -222,7 +223,7 @@ export const sendTokenTokenAmountAndToAddressSelector = createSelector(
 export const contractExchangeRateSelector = createSelector(
   contractExchangeRatesSelector,
   tokenAddressSelector,
-  (contractExchangeRates, tokenAddress) => contractExchangeRates[tokenAddress],
+  (contractExchangeRates, tokenAddress) => contractExchangeRates[Object.keys(contractExchangeRates).find((address) => isEqualCaseInsensitive(address, tokenAddress))],
 );
 
 export const transactionFeeSelector = function (state, txData) {
