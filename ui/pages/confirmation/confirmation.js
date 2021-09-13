@@ -63,6 +63,7 @@ const alertStateReducer = produce((state, action) => {
  * confirmation page in a custom hook. This hook is not likely to be used
  * outside of this file, but it helps to reduce complexity of the primary
  * component.
+ *
  * @param {Object} pendingConfirmation - a pending confirmation waiting for
  *  user approval
  * @returns {[alertState: Object, dismissAlert: Function]} - tuple with

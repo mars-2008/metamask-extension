@@ -50,6 +50,7 @@ function getHighestIncrementedFee(originalFee, currentEstimate) {
  * discarded by the network to avoid DoS attacks. This hook returns an object
  * that either has gasPrice or maxFeePerGas/maxPriorityFeePerGas specified. In
  * addition the gasLimit will also be included.
+ *
  * @param {} transactionGroup
  * @returns {import(
  *   '../../app/scripts/controllers/transactions'

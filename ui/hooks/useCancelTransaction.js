@@ -14,8 +14,9 @@ import { useIncrementedGasFees } from './useIncrementedGasFees';
  * Provides a reusable hook that, given a transactionGroup, will return
  * whether or not the account has enough funds to cover the gas cancellation
  * fee, and a method for beginning the cancellation process
+ *
  * @param {Object} transactionGroup
- * @return {[boolean, Function]}
+ * @returns {[boolean, Function]}
  */
 export function useCancelTransaction(transactionGroup) {
   const { primaryTransaction } = transactionGroup;

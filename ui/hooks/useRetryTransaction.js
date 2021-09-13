@@ -13,8 +13,9 @@ import { useIncrementedGasFees } from './useIncrementedGasFees';
 /**
  * Provides a reusable hook that, given a transactionGroup, will return
  * a method for beginning the retry process
+ *
  * @param {Object} transactionGroup - the transaction group
- * @return {RetryTransactionReturnValue}
+ * @returns {RetryTransactionReturnValue}
  */
 
 export function useRetryTransaction(transactionGroup) {

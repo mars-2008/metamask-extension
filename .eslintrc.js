@@ -39,9 +39,10 @@ module.exports = {
     '@metamask/eslint-config',
     '@metamask/eslint-config-nodejs',
     'prettier',
+    // 'plugin:jsdoc/recommended',
   ],
 
-  plugins: ['@babel', 'import', 'prettier'],
+  plugins: ['@babel', 'import', 'jsdoc', 'prettier'],
 
   globals: {
     document: 'readonly',
@@ -67,6 +68,47 @@ module.exports = {
     'node/no-sync': 'off',
     'node/no-unpublished-import': 'off',
     'node/no-unpublished-require': 'off',
+    'jsdoc/match-description': 'off',
+    'jsdoc/no-undefined-types': 'off',
+    'jsdoc/require-description-complete-sentence': 'off',
+    'jsdoc/require-description': 'off',
+    'jsdoc/require-jsdoc': 'off',
+    'jsdoc/require-param-description': 'off',
+    'jsdoc/require-param-type': 'off',
+    'jsdoc/require-returns-description': 'off',
+    'jsdoc/require-returns-type': 'off',
+    'jsdoc/require-returns': 'off',
+    'jsdoc/require-throws': 'off',
+    'jsdoc/valid-types': 'off',
+
+    // TODO: Migrate these rules into the main ESLint config
+    'jsdoc/check-access': 'error',
+    'jsdoc/check-alignment': 'error',
+    'jsdoc/check-line-alignment': 'error',
+    'jsdoc/check-param-names': 'error',
+    'jsdoc/check-property-names': 'error',
+    'jsdoc/check-tag-names': 'error',
+    'jsdoc/check-types': 'error',
+    'jsdoc/check-values': 'error',
+    'jsdoc/empty-tags': 'error',
+    'jsdoc/implements-on-classes': 'error',
+    'jsdoc/multiline-blocks': 'error',
+    'jsdoc/newline-after-description': 'error',
+    'jsdoc/no-bad-blocks': 'error',
+    'jsdoc/no-defaults': 'error',
+    'jsdoc/no-multi-asterisks': 'error',
+    'jsdoc/require-asterisk-prefix': 'error',
+    'jsdoc/require-hyphen-before-param-description': 'error',
+    'jsdoc/require-param-name': 'error',
+    'jsdoc/require-param': ['error', { unnamedRootBase: ['options'] }],
+    'jsdoc/require-property': 'error',
+    'jsdoc/require-property-description': 'error',
+    'jsdoc/require-property-name': 'error',
+    'jsdoc/require-property-type': 'error',
+    'jsdoc/require-returns-check': 'error',
+    'jsdoc/require-yields': 'error',
+    'jsdoc/require-yields-check': 'error',
+    'jsdoc/tag-lines': 'error',
   },
   overrides: [
     {
@@ -179,6 +221,9 @@ module.exports = {
   ],
 
   settings: {
+    jsdoc: {
+      mode: 'typescript',
+    },
     react: {
       version: 'detect',
     },
